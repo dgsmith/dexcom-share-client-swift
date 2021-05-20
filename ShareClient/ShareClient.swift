@@ -8,10 +8,16 @@
 
 import Foundation
 
-public struct ShareGlucose {
+public struct ShareGlucose: Hashable, Codable {
     public let glucose: UInt16
     public let trend: UInt8
     public let timestamp: Date
+    
+    public init(glucose: UInt16, trend: UInt8, timestamp: Date) {
+        self.glucose = glucose
+        self.trend = trend
+        self.timestamp = timestamp
+    }
 }
 
 public enum ShareError: Error {
